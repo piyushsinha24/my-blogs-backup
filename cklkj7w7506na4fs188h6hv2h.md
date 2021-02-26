@@ -38,7 +38,19 @@ Then, I replaced the `Templates` showcase webpage with a simple option to select
 
 ![new-layout.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1614194391098/PYdR1cmca.png)
 
-Now, I had a web page with different components & I had to find a way to download the resume preview component in the PDF-format and to properly fit in most commonly ISO paper size i.e. A4. I thought of the most easiest way of doing that: `window.print()`. But it will print the entire webpage right? There's a way to apply different styles specifically for `print`.
+Now, I had a web page with different components & I had to find a way to download the resume preview component in the PDF-format and to properly fit in most commonly ISO paper size i.e. A4. At first, I made use of `html2canvas` & `jsPDF` to export the component as PDF and it did worked. 
+
+```
+const input = document.getElementById('divToPrint');
+    html2canvas(input)
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        pdf.addImage(imgData, 'JPEG', 0, 0);
+        pdf.save("download.pdf");
+      });
+```
+But the text wasn't `selectable` and it concerned me. This is the most important step in making your document readable by assistive technology. If your textual content is encoded in images in your PDF, then screen readers cannot process it. Then, I thought of the most easiest way of doing that: `window.print()`. But it will print the entire webpage right? There's a way to apply different styles specifically for `print`.
 
 ```
 @media print { ... }
