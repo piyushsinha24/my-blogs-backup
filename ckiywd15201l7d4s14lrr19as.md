@@ -78,4 +78,4 @@ Shadow DOM is a way to create a component-local DOM. The elements defined inside
 I hope you've been enjoying my articles. If you found them useful, consider buying me a coffee! I would really appreciate it.
 
 %%[buycoffee]
-%%[web3Forms]
+%%[web3forms]
