@@ -3,7 +3,7 @@
 Building web apps is a fun thing to do but if we also invest some time thinking about the performance, it's a cherry on top. Everyone hates a sluggish interface. In this series, we'll go through some of the tips and tricks to build a optimal interface.
 
 
-## Memoization
+## Unnecessary Re-renders
 
 React uses the concept of virtual DOM to minimize the performance cost of re-rendering but is it enough to optimize the performance?
 
@@ -64,11 +64,15 @@ The chart above shows that `Parent`, `Child1` & `Child2` are re-rendered. `Child
 
 To fix this, we can make use of `memoization`.
 
-> Memoization is an optimization technique to speed up applications by storing the results of expensive function calls and returning the `cached` result when the same inputs occur again.
+## Memoization
+
+Memoization is an optimization technique to speed up applications by storing the results of expensive function calls and returning the `cached` result when the same inputs occur again.
+
+In React apps, we can implement this behaviour using `React.memo`. 
 
 ### React.memo
 
-In React apps, we can implement this behaviour using `React.memo`. It is a higher order component that takes a component and returns a memoized component. This means that React will skip rendering the component, and reuse the last rendered result if there's no change in props.
+It is a higher order component that takes a component and returns a `memoized` component. This means that React will skip rendering the component, and reuse the last rendered result if there's no change in props.
 
 Let's wrap our Child2 component with React.memo:
 
