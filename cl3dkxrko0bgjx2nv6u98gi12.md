@@ -1,6 +1,6 @@
 ## Optimizing Performance in React Apps - I
 
-Building web apps is a fun thing to do but if we also invest some time thinking about the performance, it's a cherry on top. Everyone hates a sluggish interface. In this series, we'll go through some of the tips and tricks to build a optimal interface.
+Building web apps is a fun thing to do but if we also invest some time thinking about the performance, it's a cherry on top. Everyone hates a sluggish interface. In this series, we'll go through some of the tips and tricks to build an optimal interface.
 
 
 ## Unnecessary Re-renders
