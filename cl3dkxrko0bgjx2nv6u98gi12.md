@@ -1,13 +1,16 @@
 ## Optimizing Performance in React Apps - I
 
-Building web apps is a fun thing to do but if we also invest some time thinking about the performance, it's a cherry on top. Everyone hates a sluggish interface. In this series, we'll go through some of the tips and tricks to build an optimal interface.
+Welcome to [Optimizing Performance in React Apps](https://piyushsinha.tech/series/optimizing-react), a series discussing tips & tricks to build an optimal interface.
+
+In this article, we'll learn how to avoid unnecessary re-renders.
+
 
 
 ## Unnecessary Re-renders
 
 React uses the concept of virtual DOM to minimize the performance cost of re-rendering but is it enough to optimize the performance?
 
-While writing components, we are implicitly building a component tree and the updates propagates all the way down. Because of this, re-rendering is happening in more place than it needs to. Let me explain in the example below:
+While writing components, we are implicitly building a component tree and the updates propagates all the way down. Because of this, re-rendering is happening in more places than it needs to. Let me explain in the example below:
 
 Here we have a `Parent` component with a counter logic & two child components. `Child1` takes Parent's state variable - `count` as a prop and `Child2` has nothing to do with Parent's state:
 
